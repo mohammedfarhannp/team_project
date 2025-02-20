@@ -1,10 +1,27 @@
-h1 {
-background-color: #f7b6ad;
+/*
+    * {} for all elements in the webpage
+    like a default settings for all elements of a webpage
+*/
+
+* {
+    /* Remove extra white space */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     text-align: center;
 }
+
+#main-heading {
+    background-color: #f7b6ad;
+    /* Increase the thickness of background color */
+    padding: 30px;
+}
+
+
+/* 
 #heading
 {
     background-color: yellow;
@@ -15,3 +32,4 @@ body{
     background-color: green;
 }
 
+*/
