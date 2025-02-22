@@ -18,19 +18,31 @@
     box-sizing: border-box;
 }
 
-#main-heading {
+.top-banner {
+    width:100%;
     background-color: var(--peach);
-    text-align:center;
-    padding:30px;
-    color:var(--navy-blue);
+    color: var(--navy-blue);
+    text-align: center;
+    padding: 20px 0;
+    position:relative;
+    height:20vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.h1-style-1 {
+    font-size:300%;
 }
 
 .content-wrapper {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:20px;
-    max-width:1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
 }
 
 .text-content {
@@ -71,7 +83,10 @@
     background-color: var(--coral);
 }
 
+    .btn:active {
+        transform:scale(0.95);
+    }
+
 body {
     background-color:var(--off-white);
-
 }
