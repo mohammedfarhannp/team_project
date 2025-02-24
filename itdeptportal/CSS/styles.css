@@ -1,6 +1,9 @@
 /* Add more custom colors; start variable name with -- */
 :root {
-   --peach:#f7b6ad;
+    --off-white: #f8f8f8;
+    --peach: #f7b6ad;
+    --coral: #ff6b6b;
+    --navy-blue: #34495e;
 }
 
 /*
@@ -24,17 +27,3 @@ body {
     /* Increase the thickness of background color */
     padding: 30px;
 }
-
-
-/* 
-#heading
-{
-    background-color: yellow;
-}
-
-.heading1
-{
-    background-color: green;
-}
-
-*/

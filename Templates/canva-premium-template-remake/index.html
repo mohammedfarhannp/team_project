@@ -1,23 +1,33 @@
 <!-- DOCTYPE TAG -->
 <!DOCTYPE html>
+
 <!-- HTML TAG -->
 <html>
+    
     <!-- HEAD TAG -->
     <head>
+        <!-- META TAG FOR DIFFERENT DEVICE RESOLUTIONS -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- TITLE TAG -->
         <title>
             Template Sigma
         </title>
-        <!-- LINK TAG -->
-        <link rel="stylesheet" href="base.css">
-        <link rel="stylesheet" href="slider.css">
+        <!-- CSS LINK TAGS -->
+        <link rel="stylesheet" href="CSS/base.css">
+        <link rel="stylesheet" href="CSS/slider.css">
+
+        <!-- JS FROM EXTERNAL JS FILE -->
+        <script src="JS/functions.js"></script>
     </head>
 
     <!-- BODY TAG -->
     <body>
-        <h1 id="main-heading">
-            KUC IT DEPT PORTAL<br/>(MANGATHUPARAMBA)
-        </h1>
+        <!-- BANNER DIV TAG -->
+        <div class="top-banner">
+            <h1>
+                KUC IT DEPT PORTAL<br/>(MANGATHUPARAMBA)
+            </h1>
+        </div>
 
         <!-- Wrapper DIV TAG -->
         <div class="content-wrapper">
@@ -26,8 +36,8 @@
             <div class="slider">
                 <!-- Slides DIV TAG-->
                 <div class="slides">
-                    <img class="pic" src="img-2.jpg" alt="img not found!">
-                    <img class="pic" src="img-1.jpg" alt="img not found!">
+                    <img class="pic" src="IMGS/img-2.jpg" alt="img not found!">
+                    <img class="pic" src="IMGS/img-1.jpg" alt="img not found!">
                 </div>
             </div>
 
@@ -39,10 +49,13 @@
                     for students in the field of Information Technology. Our curriculum is designed to
                     meet industry standards, ensuring that students are well-prepared for the future.
                 </p>
+                <!-- Button DIV TAG -->
+                <div class="button-container">
+                    <button class="btn" onclick="redirect('student-login.html')">Student Portal</button>
+                    <button class="btn" onclick="redirect('Courses/')">Results</button>
+                </div>
             </div>
-
         </div>
-
 
     </body>
 </html>
