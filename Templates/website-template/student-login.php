@@ -50,30 +50,40 @@
                 $pass="";
                 $db = "IT_Dept";
 
-                $conn = new mysqli(hostname: $server, username: $user, password: $pass, database: $db);
-                $register_no=mysqli_real_escape_string(mysql: $conn, string: $_POST["regno"]);
-                $password=password_hash(password: $_POST["pass"],algo: PASSWORD_BCRYPT);
+                $conn = new mysqli($server, $user, $pass, $db);
+
+                $register_no = mysqli_real_escape_string($conn, $_POST["regno"]);
+                $password = $_POST["pass"];
 
                 if($conn->connect_error)
                 {
                     die("Connection Failed" . $conn->connect_error);
                 }
+
                 $sql_query="select * from AUTH where REGISTER_NUMBER = '$register_no'";
                 $result = $conn->query($sql_query);
-                $hashed_password = ($result->num_rows > 0) ? $result->fetch_assoc()["PASSWORD_ENCRYPTED"] : null;
 
-                if(password_verify($password, $hashed_password))
-                {/*
-                    $sql_query2="select * from STUDENTS where REGISTER_NUMBER = '$register_no'";
-                    $result2 = $conn->query($sql_query2);
+                if($result->num_rows === 1)
+                {
+                    $row = $result->fetch_assoc();
+                    if(password_verify($password, $row['PASSWORD_ENCRYPTED']))
+                    {/*
+                        $sql_query2="select * from STUDENTS where REGISTER_NUMBER = '$register_no'";
+                        $result2 = $conn->query($sql_query2);
 
-                    $row=$result2->fetch_assoc();*/
-                    echo"<script>alert('correct credentials')</script>";
-                    ob_start();
-                    session_start();
-                    $_SESSION["REGISTER_NUMBER"] =$register_no;
-                    echo"<script>location='student-dashboard.php'</script>";
-                }       
+                        $row=$result2->fetch_assoc();*/
+                        
+                        ob_start();
+                        session_start();
+                        $_SESSION["REGISTER_NUMBER"] =$register_no;
+                        echo"<script>location='student-dashboard.php'</script>";
+
+                    } else {
+                        echo "<script>alert('Incorrect Password!!')</script>";
+                    }
+                } else {
+                    echo "<script>alert('Invalid Register Number!!')</script>";
+                } 
             }else
             {
                 echo "<script>alert('Please enter your register number and password to login.');</script>";
