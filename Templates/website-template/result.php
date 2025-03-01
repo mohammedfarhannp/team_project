@@ -15,7 +15,7 @@
 
     <!-- BODY TAG -->
     <body>
-
+        
 <?php
     if($_SERVER['REQUEST_METHOD'] === 'POST')
     {
@@ -90,5 +90,8 @@
     }
 
 ?>
+        <!-- BUTTON TAG -->
+        <button class="back-btn" onclick="history.back()">Back</button>
+
     </body>
 </html>

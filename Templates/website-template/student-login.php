@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(isset($_SESSION["REGISTER_NUMBER"]))
+    {
+        echo "<script>location='student-dashboard.php'</script>";
+    }
+?>
+
 <!-- DOCTYPE HTML TAG -->
 <!DOCTYPE html>
 
@@ -76,6 +84,7 @@
                         ob_start();
                         session_start();
                         $_SESSION["REGISTER_NUMBER"] =$register_no;
+                        $conn->close();
                         echo"<script>location='student-dashboard.php'</script>";
 
                     } else {
@@ -83,7 +92,7 @@
                     }
                 } else {
                     echo "<script>alert('Invalid Register Number!!')</script>";
-                } 
+                }
             }else
             {
                 echo "<script>alert('Please enter your register number and password to login.');</script>";
@@ -91,6 +100,5 @@
 
         }
         ?>
-
     </body>
 </html>

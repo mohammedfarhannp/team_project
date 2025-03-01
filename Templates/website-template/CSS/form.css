@@ -75,3 +75,14 @@ p {
     .login-btn:active {
         transform: scale(0.95);
     }
+
+.logout-btn {
+    background-color: var(--mint-green);
+    position:absolute;
+    top: 40px;
+    right: 20px;
+}
+
+    .logout-btn:hover {
+        background-color: var(--navy-blue);
+    }
