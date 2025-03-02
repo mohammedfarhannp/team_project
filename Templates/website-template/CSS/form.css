@@ -1,14 +1,12 @@
 :root {
-    --peach: #f7b6ad;
-    --gold: #d4af37;
-    --coral: #ff6b6b;
-    --mint-green: #a8e6cf;
-    --navy-blue: #34495e;
-    --silver-grey: #e8e8e8;
-    --warm-grey: #cccccc;
-    --cool-grey: #d6d6d6;
-    --light-grey: #f0f0f0;
-    --off-white: #f8f8f8;
+    --peach:#f7b6ad;
+    --dusty-rose:#8a5862;
+    --coral:#ff6b6b;
+    --mint-green:#a8e6cf;
+    --navy-blue:#34495e;
+    --light-cream:#f9f5e7;
+    --off-white:#f8f8f8;
+    --dusty-rose-light:#b27c87;
 }
 
 #login-form {
@@ -36,7 +34,7 @@ input {
     
     margin: 10px 0;
     
-    border: 1px solid var(--peach);
+    border: 1px solid var(--dusty-rose);
     border-radius: 5px;
     
     font-size: 16px;
@@ -52,7 +50,7 @@ p {
     padding: 12px;
     margin-top:12px;
 
-    background-color: var(--peach);
+    background-color: var(--dusty-rose);
     color:white;
     
     font-size: 18px;
@@ -68,7 +66,7 @@ p {
 
     /* Change color on cursor placed on button*/
     .login-btn:hover {
-        background-color: var(--coral);
+        background-color: var(--dusty-rose-light);
     }
 
     /* Shrink Effect when button clicked */
@@ -77,12 +75,15 @@ p {
     }
 
 .logout-btn {
-    background-color: var(--mint-green);
+    background-color: var(--off-white);
+    color:var(--navy-blue);
     position:absolute;
     top: 40px;
-    right: 20px;
+    right: 40px;
+    width: 200px;
 }
 
     .logout-btn:hover {
-        background-color: var(--navy-blue);
+        background-color: var(--dusty-rose-light);
+        color:var(--off-white);
     }
