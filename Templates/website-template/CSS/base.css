@@ -1,14 +1,12 @@
 :root {
     --peach:#f7b6ad;
-    --gold:#d4af37;
+    --dusty-rose:#8a5862;
     --coral:#ff6b6b;
     --mint-green:#a8e6cf;
     --navy-blue:#34495e;
-    --silver-grey:#e8e8e8;
-    --warm-grey:#cccccc;
-    --cool-grey:#d6d6d6;
-    --light-grey:#f0f0f0;
+    --light-cream:#f9f5e7;
     --off-white:#f8f8f8;
+    --dusty-rose-light:#b27c87;
 }
 
 * {
@@ -26,7 +24,7 @@
 
 table {
     position:relative;
-    border-color:var(--peach);
+    border-color:var(--dusty-rose);
     width:60%;
     margin-left:auto;
     margin-right:auto;
@@ -37,17 +35,17 @@ table {
 
 th {
     padding:10px;
-    border: 2px solid var(--peach);
+    border: 2px solid var(--dusty-rose);
 }
 
 td {
     padding: 10px;
     text-align:center;
-    border: 2px solid var(--peach);
+    border: 2px solid var(--dusty-rose);
 }
 
 tr:hover {
-    background-color:var(--coral);
+    background-color:var(--dusty-rose-light);
     color:var(--off-white);
 }
 
@@ -107,8 +105,8 @@ tr:hover {
 
 .top-banner {
     width:100%;
-    background-color: var(--peach);
-    color: var(--navy-blue);
+    background-color: var(--dusty-rose);
+    color: var(--off-white);
     text-align: center;
     padding: 20px 0;
     position:relative;
@@ -201,7 +199,7 @@ tr:hover {
 
     .text-content h2 {
         font-size: 22px;
-        color: var(--coral);
+        color: var(--dusty-rose);
         margin-bottom:10px;
     }
 
@@ -217,7 +215,7 @@ tr:hover {
 }
 
 .btn {
-    background-color: var(--peach);
+    background-color: var(--dusty-rose);
     color: white;
     border: none;
     padding: 12px 20px;
@@ -228,7 +226,7 @@ tr:hover {
 }
 
 .btn:hover {
-    background-color: var(--coral);
+    background-color: var(--dusty-rose-light);
 }
 
     .btn:active {
