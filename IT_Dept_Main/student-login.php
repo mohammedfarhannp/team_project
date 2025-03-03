@@ -12,24 +12,28 @@
 <!-- HTML TAG -->
 <html>
     <!-- HEAD TAG -->
-<head>
-    <!-- META TAG FOR DIFFERENT DEVICE RESOLUTIONS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <!-- META TAG FOR DIFFERENT DEVICE RESOLUTIONS -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- TITLE TAG -->
-    <title>
-        Student Portal
-    </title>
+        <!-- TITLE TAG -->
+        <title>
+            Student Portal
+        </title>
 
-    <!-- LINK TAGS -->
-    <link rel="stylesheet" href="CSS/base.css">
-    <link rel="stylesheet" href="CSS/form.css">
-</head>
+        <!-- LINK TAGS -->
+        <link rel="stylesheet" href="CSS/base.css">
+        <link rel="stylesheet" href="CSS/form.css">
+
+        <!-- EXTERNAL JS LINK -->
+        <script src="JS/functions.js"></script>
+    </head>
 
     <!-- BODY TAG -->
     <body>
         <!-- Banner DIV TAG -->
         <div class="top-banner">
+            <button class="back-btn" onclick="redirect('index.html')">Home</button>
             <h1 class="h1-style-1">
                 Student Portal
             </h1>

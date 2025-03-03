@@ -76,9 +76,9 @@ p {
 
 .logout-btn {
     background-color: var(--off-white);
-    color:var(--navy-blue);
+    color:var(--dusty-rose-light);
     position:absolute;
-    top: 40px;
+    top: 2vwh;
     right: 40px;
     width: 200px;
 }

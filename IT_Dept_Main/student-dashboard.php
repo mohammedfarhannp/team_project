@@ -2,14 +2,6 @@
 <html>
 
 <?php
-/*
-TO DO
-Check if session exists, if yes then proceed else redirect student-login.php
-
-Also
-In Student-login.php
-Check if session exists, if yes then redirect to dashboard, else proceed
-*/
     session_start();
     if(!isset($_SESSION["REGISTER_NUMBER"]))
     {
@@ -52,8 +44,8 @@ Check if session exists, if yes then redirect to dashboard, else proceed
     echo "<head>";
 
     echo "<body>";
-    echo "<div class='top-banner'><h1>Welcome $Name</h1></div>";
-
+    echo "<div class='top-banner'><h1>Welcome $Name</h1>";
+    echo "<button class='login-btn logout-btn' onclick='redirect(\"logout.php\")'>Logout</button></div>";
     echo "<h2 class='table-title'>Student Information</h2>";
     echo "<table border='2'>";
 
@@ -87,8 +79,6 @@ Check if session exists, if yes then redirect to dashboard, else proceed
         echo "<td>" . ($results[$key] ?? "N/A") . "</td>";
     }
     echo "</tr></table>";
-
-    echo "<button class='login-btn logout-btn' onclick='redirect(\"logout.php\")'>Logout</button>";
 
     echo "</body>";
 ?>
