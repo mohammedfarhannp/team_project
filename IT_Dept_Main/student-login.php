@@ -1,7 +1,10 @@
 <?php
+    // Starts Session
     session_start();
+    // Checks if Session Variable 'REGISTER_NUMBER' exists
     if(isset($_SESSION["REGISTER_NUMBER"]))
     {
+        // Redirect to Student Dashboard
         echo "<script>location='student-dashboard.php'</script>";
     }
 ?>
@@ -41,6 +44,13 @@
 
         <!-- LOGIN DIV -->
         <div id="login-form">
+
+            <!-- ALERT DIVs -->
+            <div class="alert" id="alert-1">Incorrect Register Number!</div>
+            <div class="alert" id="alert-2">Incorrect Password!</div>
+            <div class="alert" id="alert-3">Please Enter Register Number & Password!</div>
+
+            <!-- FORM TAG -->
             <form action="student-login.php" method="POST">
                 <p>LOG IN</p>
                 
@@ -50,13 +60,16 @@
                 <button type="submit" class="login-btn">LOG IN</button>
             </form>
         </div>
+
+
         <?php
-        
+        // Checks if the request method is POST
         if($_SERVER["REQUEST_METHOD"]==="POST")
         {
+            // Checks if POST Variables 'regno' and 'pass' are empty or not
             if(!empty($_POST["regno"]) && !empty($_POST["pass"]))
             {
-                
+                // Makes a connection to Database
                 $server = "localhost";
                 $user = "root";
                 $pass="";
@@ -64,44 +77,53 @@
 
                 $conn = new mysqli($server, $user, $pass, $db);
 
-                $register_no = mysqli_real_escape_string($conn, $_POST["regno"]);
+                // Variables
+                $register_no = mysqli_real_escape_string($conn, $_POST["regno"]); // Protection from sql-injection
                 $password = $_POST["pass"];
 
+                // Check if Connection error
                 if($conn->connect_error)
                 {
                     die("Connection Failed" . $conn->connect_error);
                 }
 
+                // Query Variable and Execution
                 $sql_query="select * from AUTH where REGISTER_NUMBER = '$register_no'";
                 $result = $conn->query($sql_query);
 
+                // Checks if the number or rows after Query Execution is 1
                 if($result->num_rows === 1)
                 {
+                    // Fetches the row into $row variable
                     $row = $result->fetch_assoc();
+                    
+                    // Password Verification
                     if(password_verify($password, $row['PASSWORD_ENCRYPTED']))
-                    {/*
-                        $sql_query2="select * from STUDENTS where REGISTER_NUMBER = '$register_no'";
-                        $result2 = $conn->query($sql_query2);
-
-                        $row=$result2->fetch_assoc();*/
-                        
+                    {
+                        // Start a session
                         ob_start();
                         session_start();
+
+                        // Declare Session Variable
                         $_SESSION["REGISTER_NUMBER"] =$register_no;
+                        
+                        // Close Connection and redirect
                         $conn->close();
                         echo"<script>location='student-dashboard.php'</script>";
 
                     } else {
-                        echo "<script>alert('Incorrect Password!!')</script>";
+                        // Alert User About Incorrect Password
+                        echo "<script>alert_user('alert-2');</script>";
                     }
                 } else {
-                    echo "<script>alert('Invalid Register Number!!')</script>";
+                    // Alert User About Invalid Register Number
+                    echo "<script>alert_user('alert-1')</script>";
                 }
             }else
             {
-                echo "<script>alert('Please enter your register number and password to login.');</script>";
+                // Alert User About Empty Fields
+                echo "<script>alert_user('alert-3');</script>";
             }
-
         }
         ?>
     </body>

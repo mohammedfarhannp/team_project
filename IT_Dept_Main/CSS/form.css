@@ -10,9 +10,10 @@
 }
 
 #login-form {
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height:50vh;
 }
 

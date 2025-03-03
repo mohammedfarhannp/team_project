@@ -25,6 +25,14 @@
 
 }
 
+.alert {
+    display:none;
+    color:red;
+    padding:10px;
+    border-radius:5px;
+    text-align:center;
+}
+
 .table-title {
     text-align: center;
     color: var(--navy-blue);
