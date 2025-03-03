@@ -30,6 +30,7 @@
     $info = $sql_result_1->fetch_assoc();
     $results = $sql_result_2->fetch_assoc();
 
+    $Register_Number = $info['REGISTER_NUMBER'];
     $Name = $info['NAME'];
     $Batch = $info['BATCH'];
     $Course = $info['COURSE'];
@@ -37,7 +38,7 @@
 
     // HTML WITH-IN PHP TAG
     echo "<head>";
-    echo "<title>$REGISTER_NUMBER</title>";
+    echo "<title>$Register_Number</title>";
     echo "<link rel='stylesheet' href='CSS/base.css'>";
     echo "<link rel='stylesheet' href='CSS/form.css'>";
     echo "<script src='JS/functions.js'></script>";
@@ -49,7 +50,7 @@
     echo "<h2 class='table-title'>Student Information</h2>";
     echo "<table border='2'>";
 
-    echo "<tr><td>Register Number</td> <td>$REGISTER_NUMBER</td></tr>";
+    echo "<tr><td>Register Number</td> <td>$Register_Number</td></tr>";
     echo "<tr><td>Name of Student</td> <td>$Name</td></tr>";
     echo "<tr><td>Email ID of Student</td> <td>$Email</td></tr>";
     echo "<tr><td>Course Opted</td> <td>$Course</td></tr>";
