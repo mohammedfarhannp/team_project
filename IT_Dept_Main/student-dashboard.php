@@ -60,6 +60,7 @@
 
     echo "<h2 class='table-title'>Semester Results</h2>";
 
+    // Checks if the course if FYIMP or not, if yes then 10 iterations for 10 semesters, else 4 iterations for 4 semesters
     if($Course === "FYIMP")
     {
         $iteration = 10;
@@ -67,12 +68,14 @@
         $iteration = 4;
     }
 
+    // Table Creation based on the number of iterations
     echo "<table broder='2'><tr>";
     for ($i = 1; $i <= $iteration; $i++) {
         echo "<th>Semester " . $i . "</th>";
     }
     echo "</tr>";
 
+    // Table Data based on the number of iterations
     echo "<tr>";
     for($i = 1; $i <= $iteration; $i++)
     {
