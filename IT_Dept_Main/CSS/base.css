@@ -26,7 +26,6 @@ body {
     position: absolute;
     top:20px;
     left:40px;
-
 }
 
 .alert {
@@ -131,8 +130,6 @@ tr:hover {
     .text-content p {
         line-height:1.6;
     }
-
-
 
 /* FOR MOBILE SCREENS | NEVER MIND THIS SECTION UNLESS WORKING FOR MOBILE SCREEN*/
 @media (max-width: 768px) {
