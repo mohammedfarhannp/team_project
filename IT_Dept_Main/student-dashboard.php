@@ -40,7 +40,7 @@
     echo "<head>";
     echo "<title>$Register_Number</title>";
     echo "<link rel='stylesheet' href='CSS/base.css'>";
-    echo "<link rel='stylesheet' href='CSS/form.css'>";
+    echo "<link rel='stylesheet' href='CSS/button.css'>";
     echo "<script src='JS/functions.js'></script>";
     echo "<head>";
 

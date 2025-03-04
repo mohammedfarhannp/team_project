@@ -27,6 +27,7 @@
         <!-- LINK TAGS -->
         <link rel="stylesheet" href="CSS/base.css">
         <link rel="stylesheet" href="CSS/form.css">
+        <link rel="stylesheet" href="CSS/button.css">
 
         <!-- EXTERNAL JS LINK -->
         <script src="JS/functions.js"></script>
@@ -100,16 +101,15 @@
                     // Password Verification
                     if(password_verify($password, $row['PASSWORD_ENCRYPTED']))
                     {
-                        // Start a session
+                        // Start buffering | session already exists
                         ob_start();
-                        session_start();
 
                         // Declare Session Variable
                         $_SESSION["REGISTER_NUMBER"] =$register_no;
                         
                         // Close Connection and redirect
                         $conn->close();
-                        echo"<script>location='student-dashboard.php'</script>";
+                        echo "<script>redirect('student-dashboard.php');</script>";
 
                     } else {
                         // Alert User About Incorrect Password
