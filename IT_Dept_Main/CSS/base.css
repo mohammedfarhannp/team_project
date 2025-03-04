@@ -16,6 +16,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color:var(--off-white);
+}
+
 #logo {
     width:100px;
     height:100px;
@@ -81,49 +85,6 @@ tr:hover {
     margin-left:50vh;
 }
 
-.card {
-    background: white;
-    text-align:center;
-    max-width:250px;
-    width:100%;
-    border-radius: 10px;
-    box-shadow:0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow:hidden;
-    transition:transform 0.3s ease-in-out;
-}
-
-    .card:hover {
-        transform: scale(1.05);
-    }
-
-    .card img {
-        width:100%;
-        height:180px;
-        object-fit:cover;
-    }
-
-    .card h3 {
-        font-size: 18px;
-        margin: 10px 0;
-        font-weight: bold;
-    }
-
-.card-btn {
-    background-color: var(--dusty-rose);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    transition: 0.3s;
-}
-
-    .card-btn:hover {
-        background-color: var(--dusty-rose-light);
-    }
-
 .top-banner {
     width:100%;
     background-color: var(--dusty-rose);
@@ -155,24 +116,25 @@ tr:hover {
     padding: 20px;
 }
 
-.back-btn {
-    background-color: var(--dusty-rose-light);
-    color: var(--off-white);
-    border: none;
-    padding: 12px 20px;
-    cursor: pointer;
+.text-content {
+    max-width:90%;
     font-size: 16px;
-    border-radius: 5px;
-    position:absolute;
-    top:2vwh;
-    left:20px;
+    color:var(--navy-blue);
 }
 
-    .back-btn:hover {
-        background-color:var(--off-white);
-        color:var(--dusty-rose-light);
+    .text-content h2 {
+        font-size: 22px;
+        color: var(--dusty-rose);
+        margin-bottom:10px;
     }
 
+    .text-content p {
+        line-height:1.6;
+    }
+
+
+
+/* FOR MOBILE SCREENS | NEVER MIND THIS SECTION UNLESS WORKING FOR MOBILE SCREEN*/
 @media (max-width: 768px) {
     .option-container {
         flex-direction: column;
@@ -215,51 +177,4 @@ tr:hover {
         .top-banner h1 {
             font-size: 22px;
         }
-}
-
-.text-content {
-    max-width:90%;
-    font-size: 16px;
-    color:var(--navy-blue);
-}
-
-    .text-content h2 {
-        font-size: 22px;
-        color: var(--dusty-rose);
-        margin-bottom:10px;
-    }
-
-    .text-content p {
-        line-height:1.6;
-    }
-
-.button-container {
-    display:flex;
-    gap: 15px;
-    margin-top:20px;
-    
-}
-
-.btn {
-    background-color: var(--dusty-rose);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background-color: var(--dusty-rose-light);
-}
-
-    .btn:active {
-        transform:scale(0.95);
-    }
-
-
-body {
-    background-color:var(--off-white);
 }
