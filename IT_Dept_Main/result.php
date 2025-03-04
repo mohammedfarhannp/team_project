@@ -75,7 +75,7 @@
             $result = $connection->query($SQL_QUERY);
 
             // Table
-            echo "<table border='2'>
+            echo "<table border='2' id='space-below'>
                 <tr>
                     <th>REGISTER NUMBER</th>
                     <th>NAME</th>

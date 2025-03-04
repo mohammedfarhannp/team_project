@@ -50,6 +50,10 @@ table {
     box-shadow:0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+#space-below {
+    margin-bottom:100px;
+}
+
 th {
     padding:10px;
     border: 2px solid var(--dusty-rose);
