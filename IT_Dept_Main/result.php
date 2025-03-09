@@ -77,17 +77,26 @@
             // Table
             echo "<table border='2' id='space-below'>
                 <tr>
+                    <th>RANK</th>
                     <th>REGISTER NUMBER</th>
                     <th>NAME</th>
                     <th>SGPA</th>
                 </tr>";
+            
+            $Rank = 1;
+            $Previous = NULL;
             
             // Display results if there is results in Database else Display 'no result found'
             if($result->num_rows > 0)
             {
                 while($row = $result->fetch_assoc())
                 {
-                    echo "<tr><td>" . $row['REGISTER_NUMBER'] . "</td><td>" . $row['NAME'] . "</td><td>" . $row["$sem"] . "</td></tr>";
+                    if(!($Previous === NULL) && ($Previous > $row["$sem"]))
+                    {
+                        $Rank++;
+                    }
+                    echo "<tr><td>" . $Rank . "</td><td>" . $row['REGISTER_NUMBER'] . "</td><td>" . $row['NAME'] . "</td><td>" . $row["$sem"] . "</td></tr>";
+                    $Previous = $row["$sem"];
                 }
             } else {
                 echo "<tr><td>NO</td><td>RESULTS</td><td>FOUND</td></tr>";
