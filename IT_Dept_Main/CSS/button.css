@@ -200,3 +200,19 @@ input:checked + .toggle {
     input:checked + .toggle:before {
         transform: translateX(25px);
     }
+
+.fac-btn {
+    height:30px;
+    border:0;
+    background-color:var(--dusty-rose);
+    color:var(--off-white);
+}
+
+    .fac-btn:hover {
+        background-color:var(--dusty-rose-light);
+    }
+
+.active {
+    background-color:var(--dusty-rose-light);
+}
+

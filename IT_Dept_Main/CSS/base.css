@@ -131,6 +131,34 @@ tr:hover {
         line-height:1.6;
     }
 
+.side-panel {
+    display:flex;
+    height:100%;
+    width:180px;
+    justify-content:center;
+    flex-direction:column;
+    background-color:var(--dusty-rose);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* FOR MOBILE SCREENS | NEVER MIND THIS SECTION UNLESS WORKING FOR MOBILE SCREEN*/
 @media (max-width: 768px) {
     .option-container {
