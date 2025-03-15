@@ -140,6 +140,15 @@ tr:hover {
     background-color:var(--dusty-rose);
 }
 
+.dynamic-content {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    height:100%;
+    width:100%;
+
+}
 
 
 

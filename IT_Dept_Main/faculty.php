@@ -10,11 +10,15 @@
         <script src="JS/functions.js"></script>
     </head>
 
-    <body>
+    <body style="display:flex;">
+        
         <div class="side-panel">
-            <button class="fac-btn">MCA</button>
-            <button class="fac-btn">MSc</button>
-            <button class="fac-btn">FYIMP</button>
+            <button class="fac-btn" onclick="loadBatch('MCA')">MCA</button>
+            <button class="fac-btn" onclick="loadBatch('MSc')">MSc</button>
+            <button class="fac-btn" onclick="loadBatch('FYIMP')">FYIMP</button>
+        </div>
+
+        <div class="dynamic-content">
         </div>
     </body>
 

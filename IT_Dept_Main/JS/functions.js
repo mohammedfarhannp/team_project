@@ -21,3 +21,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// Function for loading content
+function loadBatch(faculty) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "load.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            document.querySelector(".dynamic-content").innerHTML = xhr.responseText;
+        }
+    };
+
+    xhr.send("Faculty=" + faculty);
+}
