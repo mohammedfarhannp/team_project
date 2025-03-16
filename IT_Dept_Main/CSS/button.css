@@ -216,3 +216,6 @@ input:checked + .toggle {
     background-color:var(--dusty-rose-light);
 }
 
+.toggle-btns {
+    margin-top:5vh;
+}

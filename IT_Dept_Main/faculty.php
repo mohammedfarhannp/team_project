@@ -19,7 +19,14 @@
         </div>
 
         <div class="dynamic-content">
+            <div class="batch-select">
+            </div>
+
+            <div class="toggle-btns">
+            </div>
         </div>
+
+        
     </body>
 
     

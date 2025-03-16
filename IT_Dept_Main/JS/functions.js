@@ -26,12 +26,45 @@ document.addEventListener("DOMContentLoaded", function () {
 function loadBatch(faculty) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "load.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    document.querySelector(".toggle-btns").innerHTML = "";
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            document.querySelector(".dynamic-content").innerHTML = xhr.responseText;
+            document.querySelector(".batch-select").innerHTML = xhr.responseText;
         }
     };
 
     xhr.send("Faculty=" + faculty);
+}
+
+function loadButton(batch, faculty) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "load.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            document.querySelector(".toggle-btns").innerHTML = xhr.responseText;
+        }
+    };
+
+    xhr.send("Faculty=" + faculty + "&Batch=" + batch);
+}
+
+function updateButtonState(toggle, button_id) {
+    if (toggle.checked === true) {
+        var state = "ON";
+    } else {
+        var state = "OFF";
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "load.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log("Response: " + xhr.responseText);
+        }
+    };
+
+    xhr.send("button_id=" + button_id + "&state=" + state);
 }
